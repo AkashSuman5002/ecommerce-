@@ -5,7 +5,6 @@ This repository is split into two top-level apps:
 - `frontend/` - the React + Vite storefront
 - `backend/` - the Node + Express API
 
-The old `shooping/` folder was replaced by this cleaner layout.
 
 ## Project Structure
 
