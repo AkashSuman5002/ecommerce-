@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthApiContext';
+import { apiUrl } from '../lib/api';
 import './CSS/OrderSuccess.css';
 
 const OrderSuccess = () => {
@@ -33,7 +34,7 @@ const OrderSuccess = () => {
 
         // Try to fetch from backend API
         if (authToken) {
-          const response = await fetch(`/api/orders/${orderId}`, {
+          const response = await fetch(apiUrl(`/orders/${orderId}`), {
             headers: {
               'Authorization': `Bearer ${authToken}`,
             },

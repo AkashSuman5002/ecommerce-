@@ -68,6 +68,23 @@ npm --prefix frontend run build
 - The frontend uses Vite.
 - API requests are proxied to `http://localhost:4000` during development.
 
+## Deploying To Vercel And Render
+
+### Frontend On Vercel
+
+- Set the project root directory to `frontend`.
+- Build command: `npm run build`
+- Output directory: `dist`
+- Add an environment variable named `VITE_API_BASE_URL` with your Render backend URL, for example `https://your-backend.onrender.com/api`.
+
+### Backend On Render
+
+- Set the root directory to `backend`.
+- Build command: leave empty.
+- Start command: `npm start`
+- Add any backend environment variables in the Render dashboard, including SMTP values if you want email verification to send real mail.
+- Render will set `PORT` automatically, and the backend already reads it.
+
 ## GitHub
 
 This project is intended to be pushed as a single private repository with both folders in the root.

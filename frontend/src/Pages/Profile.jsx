@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthApiContext';
+import { apiUrl } from '../lib/api';
 import './CSS/Profile.css';
 
 const INDIAN_STATE_CITY_MAP = {
@@ -88,7 +89,7 @@ const Profile = () => {
 
   const fetchUserOrders = async () => {
     try {
-      const response = await fetch('/api/orders/me', {
+      const response = await fetch(apiUrl('/orders/me'), {
         headers: {
           'Authorization': `Bearer ${authToken}`,
         },

@@ -1,11 +1,10 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { apiUrl } from '../lib/api';
 
 export const AuthContext = createContext(null);
 
 const CURRENT_USER_STORAGE_KEY = 'shopperCurrentUser';
 const AUTH_TOKEN_STORAGE_KEY = 'shopperAuthToken';
-const API_BASE_URL = '/api';
-
 const readStorageJSON = (key, fallback) => {
   try {
     const storedValue = localStorage.getItem(key);
@@ -55,7 +54,7 @@ const AuthProvider = ({ children }) => {
   }, [authToken]);
 
   const register = async ({ name, email, password }) => {
-    const data = await requestJson(`${API_BASE_URL}/auth/register`, {
+    const data = await requestJson(apiUrl('/auth/register'), {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
     });
@@ -65,7 +64,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const verifyEmail = async ({ email, code }) => {
-    const data = await requestJson(`${API_BASE_URL}/auth/verify-email`, {
+    const data = await requestJson(apiUrl('/auth/verify-email'), {
       method: 'POST',
       body: JSON.stringify({ email, code }),
     });
@@ -77,7 +76,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async ({ email, password }) => {
-    const data = await requestJson(`${API_BASE_URL}/auth/login`, {
+    const data = await requestJson(apiUrl('/auth/login'), {
       method: 'POST',
       body: JSON.stringify({ email, password }),
     });
@@ -91,7 +90,7 @@ const AuthProvider = ({ children }) => {
   const logout = async () => {
     if (authToken) {
       try {
-        await fetch(`${API_BASE_URL}/auth/logout`, {
+        await fetch(apiUrl('/auth/logout'), {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${authToken}`,

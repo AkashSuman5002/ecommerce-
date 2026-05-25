@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './CSS/Checkout.css';
 import { ShopContext } from '../Context/ShopContext';
 import { AuthContext } from '../Context/AuthApiContext';
+import { apiUrl } from '../lib/api';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ const Checkout = () => {
     }
 
     try {
-      const response = await fetch('/api/orders', {
+      const response = await fetch(apiUrl('/orders'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
