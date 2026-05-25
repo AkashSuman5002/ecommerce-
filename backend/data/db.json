@@ -1,4 +1,16 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": "a772c4d6-664b-4fbe-a9f8-e01daf07259c",
+      "name": "Akash Suman",
+      "email": "23cs3005@rgipt.ac.in",
+      "passwordHash": "c48bbd7c0e22c8dcb0fc6f74a9993e42:ddae2a7634f1187658bcc5f42dad29f1604c64940abc1dc9dff2e546c26ebbdce480bec2c6c0a26a998aac520c0eebf2c6661d4f5277841e93f3c89f53db579e",
+      "token": "797b1f02-a344-4a52-8d1f-57bab9e48b10",
+      "emailVerified": true,
+      "verificationCode": null,
+      "verificationExpiresAt": null,
+      "createdAt": "2026-05-25T07:21:23.043Z"
+    }
+  ],
   "orders": []
 }
