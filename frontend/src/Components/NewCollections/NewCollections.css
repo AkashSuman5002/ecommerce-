@@ -1,0 +1,110 @@
+.newcollections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 42px 16px;
+}
+
+.newcollections h1 {
+    color: #172033;
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.newcollections hr {
+    width: 170px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ff5a3d, #3b82f6, transparent);
+    border-radius: 10px;
+    border: none;
+}
+
+.collections {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 10px;
+}
+
+.collections img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.collections img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.14);
+}
+
+/* ====== Responsive Media Queries ====== */
+
+@media (max-width: 1200px) {
+    .newcollections {
+        padding: 36px 14px;
+        margin-bottom: 10px;
+    }
+
+    .newcollections h1 {
+        font-size: 28px;
+    }
+
+    .collections {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .newcollections {
+        padding: 30px 10px;
+        margin-bottom: 8px;
+    }
+
+    .newcollections h1 {
+        font-size: 24px;
+    }
+
+    .newcollections hr {
+        width: 130px;
+    }
+
+    .collections {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+        padding: 0 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newcollections {
+        padding: 24px 8px;
+        margin-bottom: 6px;
+    }
+
+    .newcollections h1 {
+        font-size: 20px;
+    }
+
+    .newcollections hr {
+        width: 110px;
+    }
+
+    .collections {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 20px;
+    }
+}
